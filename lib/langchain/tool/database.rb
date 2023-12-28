@@ -85,6 +85,7 @@ module Langchain::Tool
       db[input].to_a
     rescue Sequel::DatabaseError => e
       Langchain.logger.error(e.message, for: self.class)
+      e.message
     end
   end
 end
